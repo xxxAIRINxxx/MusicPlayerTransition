@@ -68,14 +68,15 @@ class ViewController: UIViewController {
             }
             
             self!.animator.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
-                self!.miniPlayerView.frame.origin.y = startOriginY - (diff * percentComplete)
+                let _percentComplete = percentComplete >= 0 ? percentComplete : 0
+                self!.miniPlayerView.frame.origin.y = startOriginY - (diff * _percentComplete)
                 if self!.miniPlayerView.frame.origin.y < endOriginY {
                     self!.miniPlayerView.frame.origin.y = endOriginY
                 }
                 self!.modalVC.view.frame.origin.y = self!.miniPlayerView.frame.origin.y + self!.miniPlayerView.frame.size.height
-                self!.tabBar.frame.origin.y = tabStartOriginY + (tabDiff * percentComplete)
+                self!.tabBar.frame.origin.y = tabStartOriginY + (tabDiff * _percentComplete)
                 
-                self!.containerView.alpha = 1.0 - (1.0 * percentComplete) + 0.5
+                self!.containerView.alpha = 1.0 - (1.0 * _percentComplete) + 0.5
                 for subview in self!.miniPlayerView.subviews as! [UIView] {
                     subview.alpha = 1.0 - (1.0 * percentComplete)
                 }
@@ -98,10 +99,10 @@ class ViewController: UIViewController {
         // Dismiss
         
         self.animator.dismissalBeforeHandler = { [weak self] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
-            self!.tabBar.frame.origin.y = CGRectGetHeight(containerView.bounds)
-            
             containerView.addSubview(self!.view)
             self!.view.insertSubview(self!.modalVC.view, belowSubview: self!.tabBar)
+            
+            self!.view.layoutSubviews()
             
             let startOriginY = 0 - CGRectGetHeight(self!.miniPlayerView.bounds)
             let endOriginY = CGRectGetHeight(self!.containerView.bounds) - self!.miniPlayerView.frame.size.height
@@ -109,6 +110,8 @@ class ViewController: UIViewController {
             let tabStartOriginY = CGRectGetHeight(containerView.bounds)
             let tabEndOriginY = CGRectGetHeight(containerView.bounds) - CGRectGetHeight(self!.tabBar.bounds)
             let tabDiff = tabStartOriginY - tabEndOriginY
+            
+            self!.tabBar.frame.origin.y = CGRectGetHeight(containerView.bounds)
             
             self!.animator.dismissalCancelAnimationHandler = { (containerView: UIView) in
                 self!.miniPlayerView.frame.origin.y = startOriginY
@@ -121,23 +124,24 @@ class ViewController: UIViewController {
             }
             
             self!.animator.dismissalAnimationHandler = {(containerView: UIView, percentComplete: CGFloat) in
-                self!.miniPlayerView.frame.origin.y = startOriginY + (diff * percentComplete)
+                let _percentComplete = percentComplete >= -0.05 ? percentComplete : -0.05
+                self!.miniPlayerView.frame.origin.y = startOriginY + (diff * _percentComplete)
                 self!.modalVC.view.frame.origin.y = self!.miniPlayerView.frame.origin.y + self!.miniPlayerView.frame.size.height
-                self!.tabBar.frame.origin.y = tabStartOriginY - (tabDiff * percentComplete)
+                self!.tabBar.frame.origin.y = tabStartOriginY - (tabDiff *  _percentComplete)
                 
-                self!.containerView.alpha = (1.0 * percentComplete)
+                self!.containerView.alpha = (1.0 * _percentComplete)
                 for subview in self!.miniPlayerView.subviews as! [UIView] {
-                    subview.alpha = 1.0 * percentComplete
+                    subview.alpha = 1.0 * _percentComplete
                 }
             }
-        }
-        
-        self.animator.dismissalCompletionHandler = { [weak self] (containerView: UIView, completeTransition: Bool) in
-            if completeTransition {
-                self!.modalVC.view.removeFromSuperview()
-                self!.animator.gestureTargetView = self!.miniPlayerView
-                self!.animator.interactiveType = .Present
-                UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
+            
+            self!.animator.dismissalCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
+                if completeTransition {
+                    self!.modalVC.view.removeFromSuperview()
+                    self!.animator.gestureTargetView = self!.miniPlayerView
+                    self!.animator.interactiveType = .Present
+                    UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
+                }
             }
         }
         

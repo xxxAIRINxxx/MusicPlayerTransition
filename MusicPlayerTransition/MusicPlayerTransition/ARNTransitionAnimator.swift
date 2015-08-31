@@ -250,10 +250,6 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
                 animationRatio = (location.x - self.panLocationStart) / CGRectGetWidth(bounds)
             }
             
-            if animationRatio < 0 {
-                animationRatio = 0
-            }
-            
             if let _contentScrollView = self.contentScrollView {
                 if self.isTransitioning == false && _contentScrollView.contentOffset.y <= 0 {
                     self.startGestureTransition()
