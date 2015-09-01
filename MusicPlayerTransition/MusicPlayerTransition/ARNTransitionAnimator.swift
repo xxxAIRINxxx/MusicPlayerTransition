@@ -78,13 +78,13 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     private weak var fromVC : UIViewController!
     private weak var toVC : UIViewController!
     
-    private var operationType : ARNTransitionAnimatorOperation
-    private var isPresenting : Bool = true
+    private(set) var operationType : ARNTransitionAnimatorOperation
+    private(set) var isPresenting : Bool = true
+    private(set)  var isTransitioning : Bool = false
     
     private var gesture : UIPanGestureRecognizer?
     private var transitionContext : UIViewControllerContextTransitioning?
     private var panLocationStart : CGFloat = 0.0
-    private var isTransitioning : Bool = false
     private var tmpBounces: Bool = true
     
     deinit {
@@ -372,9 +372,17 @@ extension ARNTransitionAnimator: UIViewControllerTransitioningDelegate {
 extension ARNTransitionAnimator: UIViewControllerInteractiveTransitioning {
     
     public override func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         let containerView = transitionContext.containerView()
+        
+        // FIXME : UINavigationController not called animator UIViewControllerTransitioningDelegate
+        switch (self.interactiveType) {
+        case .Push, .Present:
+            self.isPresenting = true
+        case .Pop, .Dismiss:
+            self.isPresenting = false
+        case .None:
+            break
+        }
         
         self.transitionContext = transitionContext
         self.fireBeforeHandler(containerView, transitionContext: transitionContext)
@@ -386,6 +394,7 @@ extension ARNTransitionAnimator: UIViewControllerInteractiveTransitioning {
 extension ARNTransitionAnimator {
     
     public override func updateInteractiveTransition(percentComplete: CGFloat) {
+        super.updateInteractiveTransition(percentComplete)
         if let transitionContext = self.transitionContext {
             let containerView = transitionContext.containerView()
             self.fireAnimationHandler(containerView, percentComplete: percentComplete)
@@ -393,6 +402,7 @@ extension ARNTransitionAnimator {
     }
     
     public override func finishInteractiveTransition() {
+        super.finishInteractiveTransition()
         if let transitionContext = self.transitionContext {
             let containerView = transitionContext.containerView()
             self.animateWithDuration(
@@ -405,6 +415,7 @@ extension ARNTransitionAnimator {
     }
     
     public override func cancelInteractiveTransition() {
+        super.cancelInteractiveTransition()
         if let transitionContext = self.transitionContext {
             let containerView = transitionContext.containerView()
             self.animateWithDuration(
