@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
         self.modalVC.modalPresentationStyle = .Custom
         self.modalVC.tapCloseButtonActionHandler = { [weak self] in
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                 self!.modalVC.view.frame.origin.y = self!.miniPlayerView.frame.origin.y + self!.miniPlayerView.frame.size.height
                 self!.tabBar.frame.origin.y = tabStartOriginY
                 self!.containerView.alpha = 1.0
-                for subview in self!.miniPlayerView.subviews as! [UIView] {
+                for subview in self!.miniPlayerView.subviews {
                     subview.alpha = 1.0
                 }
             }
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
                 self!.tabBar.frame.origin.y = tabStartOriginY + (tabDiff * _percentComplete)
                 
                 self!.containerView.alpha = 1.0 - (1.0 * _percentComplete) + 0.5
-                for subview in self!.miniPlayerView.subviews as! [UIView] {
+                for subview in self!.miniPlayerView.subviews {
                     subview.alpha = 1.0 - (1.0 * percentComplete)
                 }
             }
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
                 self!.modalVC.view.frame.origin.y = self!.miniPlayerView.frame.origin.y + self!.miniPlayerView.frame.size.height
                 self!.tabBar.frame.origin.y = tabStartOriginY
                 self!.containerView.alpha = 0.0
-                for subview in self!.miniPlayerView.subviews as! [UIView] {
+                for subview in self!.miniPlayerView.subviews {
                     subview.alpha = 0.0
                 }
             }
@@ -130,7 +130,7 @@ class ViewController: UIViewController {
                 self!.tabBar.frame.origin.y = tabStartOriginY - (tabDiff *  _percentComplete)
                 
                 self!.containerView.alpha = (1.0 * _percentComplete)
-                for subview in self!.miniPlayerView.subviews as! [UIView] {
+                for subview in self!.miniPlayerView.subviews {
                     subview.alpha = 1.0 * _percentComplete
                 }
             }

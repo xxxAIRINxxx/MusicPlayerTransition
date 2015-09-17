@@ -14,9 +14,9 @@ Custom interactive transition like Apple Music iOS App. written in Swift.
 
 ## Requirements
 
-* Xcode 6.4
+* Xcode 7.0
 * iOS 8.1+
-* Swift lang 1.2
+* Swift 2.0
 
 
 ## License
