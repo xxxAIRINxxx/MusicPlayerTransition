@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARNTransitionAnimator
 
 class ViewController: UIViewController {
     

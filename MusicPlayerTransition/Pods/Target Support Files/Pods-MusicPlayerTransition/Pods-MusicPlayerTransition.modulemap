@@ -1,0 +1,6 @@
+framework module Pods_MusicPlayerTransition {
+  umbrella header "Pods-MusicPlayerTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}

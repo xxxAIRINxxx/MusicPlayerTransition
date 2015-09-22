@@ -1,0 +1,6 @@
+framework module ARNTransitionAnimator {
+  umbrella header "ARNTransitionAnimator-umbrella.h"
+
+  export *
+  module * { export * }
+}

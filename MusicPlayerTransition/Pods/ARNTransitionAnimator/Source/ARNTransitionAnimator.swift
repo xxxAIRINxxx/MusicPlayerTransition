@@ -44,13 +44,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     }
     public var panCompletionThreshold : CGFloat = 100.0
     public var direction : ARNTransitionAnimatorDirection = .Bottom
-    public var contentScrollView : UIScrollView? {
-        didSet {
-            if let _contentScrollView = self.contentScrollView {
-                self.tmpBounces = _contentScrollView.bounces
-            }
-        }
-    }
+    public var contentScrollView : UIScrollView?
     public var interactiveType : ARNTransitionAnimatorOperation = .None {
         didSet {
             if self.interactiveType == .None {
@@ -80,12 +74,11 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     
     private(set) var operationType : ARNTransitionAnimatorOperation
     private(set) var isPresenting : Bool = true
-    private(set)  var isTransitioning : Bool = false
+    private(set) var isTransitioning : Bool = false
     
     private var gesture : UIPanGestureRecognizer?
     private var transitionContext : UIViewControllerContextTransitioning?
     private var panLocationStart : CGFloat = 0.0
-    private var tmpBounces: Bool = true
     
     deinit {
         self.unregisterPanGesture()
@@ -253,7 +246,6 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
             if let _contentScrollView = self.contentScrollView {
                 if self.isTransitioning == false && _contentScrollView.contentOffset.y <= 0 {
                     self.startGestureTransition()
-                    self.contentScrollView!.bounces = false
                 } else {
                     self.updateInteractiveTransition(animationRatio)
                 }
@@ -270,16 +262,19 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
             }
             
             if velocityForSelectedDirection > self.panCompletionThreshold && (self.direction == .Right || self.direction == .Bottom) {
-                self.finishInteractiveTransition()
+                self.finishInteractiveTransitionAnimated(true)
             } else if velocityForSelectedDirection < -self.panCompletionThreshold && (self.direction == .Left || self.direction == .Top) {
-                self.finishInteractiveTransition()
+                self.finishInteractiveTransitionAnimated(true)
             } else {
-                self.cancelInteractiveTransition()
+                let animated = self.contentScrollView?.contentOffset.y <= 0
+                self.cancelInteractiveTransitionAnimated(animated)
             }
             self.resetGestureTransitionSetting()
         } else {
             self.resetGestureTransitionSetting()
-            self.cancelInteractiveTransition()
+            if self.isTransitioning {
+                self.cancelInteractiveTransitionAnimated(true)
+            }
         }
     }
     
@@ -303,9 +298,6 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     
     func resetGestureTransitionSetting() {
         self.isTransitioning = false
-        if let _contentScrollView = self.contentScrollView {
-            _contentScrollView.bounces = self.tmpBounces
-        }
     }
 }
 
@@ -401,12 +393,12 @@ extension ARNTransitionAnimator {
         }
     }
     
-    public override func finishInteractiveTransition() {
+    public func finishInteractiveTransitionAnimated(animated: Bool) {
         super.finishInteractiveTransition()
         if let transitionContext = self.transitionContext {
             let containerView = transitionContext.containerView()
             self.animateWithDuration(
-                self.transitionDuration(transitionContext),
+                animated ? self.transitionDuration(transitionContext) : 0,
                 containerView: containerView!,
                 completeTransition: true) {
                     transitionContext.completeTransition(true)
@@ -414,12 +406,12 @@ extension ARNTransitionAnimator {
         }
     }
     
-    public override func cancelInteractiveTransition() {
+    public func cancelInteractiveTransitionAnimated(animated: Bool) {
         super.cancelInteractiveTransition()
         if let transitionContext = self.transitionContext {
             let containerView = transitionContext.containerView()
             self.animateWithDuration(
-                self.transitionDuration(transitionContext),
+                animated ? self.transitionDuration(transitionContext) : 0,
                 containerView: containerView!,
                 completeTransition: false) {
                     transitionContext.completeTransition(false)

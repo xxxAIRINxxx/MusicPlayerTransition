@@ -13,10 +13,10 @@
 		91B21A021B8E18600067D200 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B21A011B8E18600067D200 /* Images.xcassets */; };
 		91B21A051B8E18600067D200 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91B21A031B8E18600067D200 /* LaunchScreen.xib */; };
 		91B21A111B8E18600067D200 /* MusicPlayerTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B21A101B8E18600067D200 /* MusicPlayerTransitionTests.swift */; };
-		91B21A1B1B8E18910067D200 /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B21A1A1B8E18910067D200 /* ARNTransitionAnimator.swift */; };
 		91B21A1D1B8E18A20067D200 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B21A1C1B8E18A20067D200 /* ModalViewController.swift */; };
 		91E79D8B1B940377001AE4BC /* playImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91E79D8A1B940377001AE4BC /* playImage.png */; };
 		91E79D8D1B941235001AE4BC /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E79D8C1B941235001AE4BC /* LineView.swift */; };
+		C57B6E869CC251F2038548D1 /* Pods_MusicPlayerTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C48F433AAE557B772114681 /* Pods_MusicPlayerTransition.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,12 @@
 		91B21A0A1B8E18600067D200 /* MusicPlayerTransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayerTransitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B21A0F1B8E18600067D200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B21A101B8E18600067D200 /* MusicPlayerTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerTransitionTests.swift; sourceTree = "<group>"; };
-		91B21A1A1B8E18910067D200 /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARNTransitionAnimator.swift; sourceTree = "<group>"; };
 		91B21A1C1B8E18A20067D200 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		91E79D8A1B940377001AE4BC /* playImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playImage.png; sourceTree = "<group>"; };
 		91E79D8C1B941235001AE4BC /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		923EC8BDB023E4C350F8E605 /* Pods-MusicPlayerTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicPlayerTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition.release.xcconfig"; sourceTree = "<group>"; };
+		9C48F433AAE557B772114681 /* Pods_MusicPlayerTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicPlayerTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE703E00FC151BDE1C0A68C /* Pods-MusicPlayerTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicPlayerTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C57B6E869CC251F2038548D1 /* Pods_MusicPlayerTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +67,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		338FE95D86F1494CCC9E3E11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBE703E00FC151BDE1C0A68C /* Pods-MusicPlayerTransition.debug.xcconfig */,
+				923EC8BDB023E4C350F8E605 /* Pods-MusicPlayerTransition.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		91B219EC1B8E18600067D200 = {
 			isa = PBXGroup;
 			children = (
 				91B219F71B8E18600067D200 /* MusicPlayerTransition */,
 				91B21A0D1B8E18600067D200 /* MusicPlayerTransitionTests */,
 				91B219F61B8E18600067D200 /* Products */,
+				338FE95D86F1494CCC9E3E11 /* Pods */,
+				C441F5C3E33B4059C91787EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +99,6 @@
 		91B219F71B8E18600067D200 /* MusicPlayerTransition */ = {
 			isa = PBXGroup;
 			children = (
-				91B21A1E1B8E18DC0067D200 /* Lib */,
 				91B219FA1B8E18600067D200 /* AppDelegate.swift */,
 				91B219FC1B8E18600067D200 /* ViewController.swift */,
 				91B21A1C1B8E18A20067D200 /* ModalViewController.swift */,
@@ -124,12 +137,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		91B21A1E1B8E18DC0067D200 /* Lib */ = {
+		C441F5C3E33B4059C91787EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				91B21A1A1B8E18910067D200 /* ARNTransitionAnimator.swift */,
+				9C48F433AAE557B772114681 /* Pods_MusicPlayerTransition.framework */,
 			);
-			name = Lib;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91B21A141B8E18600067D200 /* Build configuration list for PBXNativeTarget "MusicPlayerTransition" */;
 			buildPhases = (
+				21D80CF1BD6AD01FB3FC1438 /* Check Pods Manifest.lock */,
 				91B219F11B8E18600067D200 /* Sources */,
 				91B219F21B8E18600067D200 /* Frameworks */,
 				91B219F31B8E18600067D200 /* Resources */,
+				5D34EC727473A7C6625C9512 /* Embed Pods Frameworks */,
+				AAF78754EC7AFD74BB5AF87B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +246,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21D80CF1BD6AD01FB3FC1438 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5D34EC727473A7C6625C9512 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAF78754EC7AFD74BB5AF87B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		91B219F11B8E18600067D200 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -239,7 +303,6 @@
 				91B219FD1B8E18600067D200 /* ViewController.swift in Sources */,
 				91B219FB1B8E18600067D200 /* AppDelegate.swift in Sources */,
 				91E79D8D1B941235001AE4BC /* LineView.swift in Sources */,
-				91B21A1B1B8E18910067D200 /* ARNTransitionAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -356,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -365,6 +428,7 @@
 		};
 		91B21A151B8E18600067D200 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE703E00FC151BDE1C0A68C /* Pods-MusicPlayerTransition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicPlayerTransition/Info.plist;
@@ -376,6 +440,7 @@
 		};
 		91B21A161B8E18600067D200 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 923EC8BDB023E4C350F8E605 /* Pods-MusicPlayerTransition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicPlayerTransition/Info.plist;
