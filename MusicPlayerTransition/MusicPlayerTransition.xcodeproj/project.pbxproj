@@ -16,7 +16,7 @@
 		91B21A1D1B8E18A20067D200 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B21A1C1B8E18A20067D200 /* ModalViewController.swift */; };
 		91E79D8B1B940377001AE4BC /* playImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91E79D8A1B940377001AE4BC /* playImage.png */; };
 		91E79D8D1B941235001AE4BC /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E79D8C1B941235001AE4BC /* LineView.swift */; };
-		C57B6E869CC251F2038548D1 /* Pods_MusicPlayerTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C48F433AAE557B772114681 /* Pods_MusicPlayerTransition.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C57B6E869CC251F2038548D1 /* Pods_MusicPlayerTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C48F433AAE557B772114681 /* Pods_MusicPlayerTransition.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

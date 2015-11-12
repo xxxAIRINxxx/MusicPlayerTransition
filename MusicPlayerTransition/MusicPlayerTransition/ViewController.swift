@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerView : UIView!
     @IBOutlet weak var tabBar : UITabBar!
     @IBOutlet weak var miniPlayerView : LineView!
+    @IBOutlet weak var miniPlayerButton : UIButton!
     
     var animator : ARNTransitionAnimator!
     var modalVC : ModalViewController!
@@ -27,6 +28,9 @@ class ViewController: UIViewController {
         self.modalVC.tapCloseButtonActionHandler = { [weak self] in
             self!.animator.interactiveType = .None
         }
+        
+        let color = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
+        self.miniPlayerButton.setBackgroundImage(self.generateImageWithColor(color), forState: .Highlighted)
         
         self.setupAnimator()
     }
@@ -47,6 +51,7 @@ class ViewController: UIViewController {
             containerView.addSubview(self!.view)
             self!.view.insertSubview(self!.modalVC.view, belowSubview: self!.tabBar)
             
+            self!.view.layoutIfNeeded()
             self!.modalVC.view.layoutIfNeeded()
             
             // miniPlayerView
@@ -76,6 +81,9 @@ class ViewController: UIViewController {
                 }
                 self!.modalVC.view.frame.origin.y = self!.miniPlayerView.frame.origin.y + self!.miniPlayerView.frame.size.height
                 self!.tabBar.frame.origin.y = tabStartOriginY + (tabDiff * _percentComplete)
+                if self!.tabBar.frame.origin.y > tabEndOriginY {
+                    self!.tabBar.frame.origin.y = tabEndOriginY
+                }
                 
                 self!.containerView.alpha = 1.0 - (1.0 * _percentComplete) + 0.5
                 for subview in self!.miniPlayerView.subviews {
@@ -146,7 +154,27 @@ class ViewController: UIViewController {
             }
         }
         
-        modalVC.transitioningDelegate = self.animator
+        self.modalVC.transitioningDelegate = self.animator
+    }
+    
+    @IBAction func tapMiniPlayerButton() {
+        self.animator.interactiveType = .None
+        self.presentViewController(modalVC, animated: true, completion: nil)
+    }
+    
+    func generateImageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRectMake(0, 0, 1, 1)
+        
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextFillRect(context, rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
     }
 }
 

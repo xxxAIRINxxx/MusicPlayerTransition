@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,6 +19,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UI-Pu-Ue1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="QUq-E4-tfA" kind="embed" id="1wb-7N-cg3"/>
@@ -27,8 +28,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moJ-gp-Frg" customClass="LineView" customModule="MusicPlayerTransition" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBx-AA-MEm">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBx-AA-MEm">
                                         <rect key="frame" x="125" y="0.0" width="125" height="21"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3k0-2e-W5i"/>
                                             <constraint firstAttribute="width" constant="125" id="8yf-RW-nr6"/>
@@ -37,8 +39,9 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gk-EJ-6Ay">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gk-EJ-6Ay">
                                         <rect key="frame" x="125" y="21" width="125" height="21"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3M3-YN-6Rs"/>
                                             <constraint firstAttribute="width" constant="125" id="TRb-fa-aDw"/>
@@ -47,18 +50,31 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCR-29-0LP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="tapMiniPlayerButton" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RN2-ja-frt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="rBx-AA-MEm" secondAttribute="centerX" id="2Fj-yY-qyc"/>
                                     <constraint firstItem="rBx-AA-MEm" firstAttribute="top" secondItem="moJ-gp-Frg" secondAttribute="top" id="4jG-CY-rnp"/>
                                     <constraint firstAttribute="centerX" secondItem="9gk-EJ-6Ay" secondAttribute="centerX" id="Kz3-gB-Vpo"/>
                                     <constraint firstAttribute="bottom" secondItem="9gk-EJ-6Ay" secondAttribute="bottom" constant="2" id="QNc-Nf-KHB"/>
+                                    <constraint firstItem="RCR-29-0LP" firstAttribute="leading" secondItem="moJ-gp-Frg" secondAttribute="leading" id="YDb-L1-x0K"/>
+                                    <constraint firstAttribute="bottom" secondItem="RCR-29-0LP" secondAttribute="bottom" id="mcg-hr-62n"/>
+                                    <constraint firstAttribute="trailing" secondItem="RCR-29-0LP" secondAttribute="trailing" id="t6r-35-xBH"/>
+                                    <constraint firstItem="RCR-29-0LP" firstAttribute="top" secondItem="moJ-gp-Frg" secondAttribute="top" id="waw-jc-u4d"/>
                                     <constraint firstAttribute="height" constant="44" id="xFc-lj-9kp"/>
                                 </constraints>
                             </view>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFc-Xp-wdu">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="mmW-xV-qKc"/>
@@ -69,6 +85,7 @@
                                 </items>
                             </tabBar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8UI-Pu-Ue1" secondAttribute="trailing" id="AHl-If-Pcq"/>
@@ -86,6 +103,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="containerView" destination="8UI-Pu-Ue1" id="aug-uN-JJZ"/>
+                        <outlet property="miniPlayerButton" destination="RCR-29-0LP" id="hit-Pb-U7h"/>
                         <outlet property="miniPlayerView" destination="moJ-gp-Frg" id="hIX-TV-dZ7"/>
                         <outlet property="tabBar" destination="BFc-Xp-wdu" id="iuz-Tf-7Dd"/>
                     </connections>
@@ -101,6 +119,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Qb-5O-cEl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="o4m-Aw-WzU">
@@ -109,7 +128,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o4m-Aw-WzU" id="zRo-fE-MPM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -132,6 +153,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zff-mr-WM9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="kPh-RO-9Lg" kind="relationship" relationship="rootViewController" id="M9k-zc-pNc"/>
@@ -155,9 +177,11 @@
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="mcb-M6-DGy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxu-vw-Gvu">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="22B-uw-UdW"/>
@@ -171,6 +195,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.78431372549019607" green="0.79607843137254897" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mcb-M6-DGy" firstAttribute="top" secondItem="j4Q-j1-Ggn" secondAttribute="top" id="JSJ-sw-nVF"/>
