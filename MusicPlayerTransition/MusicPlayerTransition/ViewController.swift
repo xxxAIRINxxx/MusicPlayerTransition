@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .Custom
+        self.modalVC.modalPresentationStyle = .FullScreen
         self.modalVC.tapCloseButtonActionHandler = { [weak self] in
             self!.animator.interactiveType = .None
         }
