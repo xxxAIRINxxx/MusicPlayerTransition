@@ -18,4 +18,14 @@ class ModalViewController: UIViewController {
         self.tapCloseButtonActionHandler?()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ModalViewController viewWillAppear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ModalViewController viewWillDisappear")
+    }
 }

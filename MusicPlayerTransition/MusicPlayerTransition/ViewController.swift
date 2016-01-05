@@ -31,6 +31,16 @@ class ViewController: UIViewController {
         self.setupAnimator()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewController viewWillAppear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ViewController viewWillDisappear")
+    }
+    
     func setupAnimator() {
         self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: modalVC)
         self.animator.usingSpringWithDamping = 0.8
