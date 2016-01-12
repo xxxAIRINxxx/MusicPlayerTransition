@@ -8,6 +8,10 @@
 
 Custom interactive transition like Apple Music iOS App. written in Swift.
 
+## Demo
+
+[See demo on Appetize.io](https://appetize.io/app/ydcey0nrvqka03nyyzyw7f0rk0?device=iphone5s&scale=75&orientation=portrait&osVersion=9.2)
+
 
 ## Using Transition Animator
 
