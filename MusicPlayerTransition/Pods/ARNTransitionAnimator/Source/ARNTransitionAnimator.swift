@@ -26,13 +26,14 @@ public enum ARNTransitionAnimatorOperation: Int {
 
 public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     
-    // animation setting
+    // Animation Settings
     
     public var usingSpringWithDamping : CGFloat = 1.0
     public var transitionDuration : NSTimeInterval = 0.5
     public var initialSpringVelocity : CGFloat = 0.1
+    public var useKeyframeAnimation : Bool = false
     
-    // interactive gesture
+    // Interactive Transition Gesture
     
     public weak var gestureTargetView : UIView? {
         willSet {
@@ -55,7 +56,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
         }
     }
     
-    // handlers
+    // Handlers
     
     public var presentationBeforeHandler : ((containerView: UIView, transitionContext: UIViewControllerContextTransitioning) ->())?
     public var presentationAnimationHandler : ((containerView: UIView, percentComplete: CGFloat) ->())?
@@ -67,7 +68,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     public var dismissalCancelAnimationHandler : ((containerView: UIView) ->())?
     public var dismissalCompletionHandler : ((containerView: UIView, completeTransition: Bool) ->())?
     
-    // private
+    // Private
     
     private weak var fromVC : UIViewController!
     private weak var toVC : UIViewController!
@@ -84,7 +85,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
         self.unregisterPanGesture()
     }
     
-    // MARK: Constructor
+    // MARK: - Constructor
     
     public init(operationType: ARNTransitionAnimatorOperation, fromVC: UIViewController, toVC: UIViewController) {
         self.operationType = operationType
@@ -101,7 +102,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
         }
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Functions
     
     private func registerPanGesture() {
         self.unregisterPanGesture()
@@ -167,27 +168,48 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     }
     
     private func animateWithDuration(duration: NSTimeInterval, containerView: UIView, completeTransition: Bool, completion: (() -> Void)?) {
-        UIView.animateWithDuration(
-            duration,
-            delay: 0,
-            usingSpringWithDamping: self.usingSpringWithDamping,
-            initialSpringVelocity: self.initialSpringVelocity,
-            options: .CurveEaseOut,
-            animations: {
-                if completeTransition {
-                    self.fireAnimationHandler(containerView, percentComplete: 1.0)
-                } else {
-                    self.fireCancelAnimationHandler(containerView)
-                }
-            }, completion: { finished in
-                self.fireCompletionHandler(containerView, completeTransition: completeTransition)
-                completion?()
-        })
+        if !self.useKeyframeAnimation {
+            UIView.animateWithDuration(
+                duration,
+                delay: 0.0,
+                usingSpringWithDamping: self.usingSpringWithDamping,
+                initialSpringVelocity: self.initialSpringVelocity,
+                options: .CurveEaseOut,
+                animations: {
+                    if completeTransition {
+                        self.fireAnimationHandler(containerView, percentComplete: 1.0)
+                    } else {
+                        self.fireCancelAnimationHandler(containerView)
+                    }
+                }, completion: { finished in
+                    self.fireCompletionHandler(containerView, completeTransition: completeTransition)
+                    completion?()
+            })
+        } else {
+            UIView.animateKeyframesWithDuration(
+                duration,
+                delay: 0.0,
+                options: .BeginFromCurrentState,
+                animations: {
+                    if completeTransition {
+                        self.fireAnimationHandler(containerView, percentComplete: 1.0)
+                    } else {
+                        self.fireCancelAnimationHandler(containerView)
+                    }
+                }, completion: { finished in
+                    self.fireCompletionHandler(containerView, completeTransition: completeTransition)
+                    completion?()
+            })
+        }
     }
     
-    // MARK: Gesture
+}
+
+// MARK: - Interactive Transition Gesture
+
+extension ARNTransitionAnimator {
     
-    func handlePan(recognizer: UIPanGestureRecognizer) {
+    internal func handlePan(recognizer: UIPanGestureRecognizer) {
         var window : UIWindow? = nil
         
         switch (self.interactiveType) {
@@ -205,17 +227,11 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
         velocity = CGPointApplyAffineTransform(velocity, CGAffineTransformInvert(recognizer.view!.transform))
         
         if recognizer.state == .Began {
-            switch (self.direction) {
-            case .Top, .Bottom:
-                self.panLocationStart = location.y
-            case .Left, .Right:
-                self.panLocationStart = location.x
-            }
+            self.setPanStartPoint(location)
             
             if let _contentScrollView = self.contentScrollView {
                 if _contentScrollView.contentOffset.y <= 0.0 {
                     self.startGestureTransition()
-                    _contentScrollView.bounces = false
                 }
             } else {
                 self.startGestureTransition()
@@ -245,6 +261,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
             
             if let _contentScrollView = self.contentScrollView {
                 if self.isTransitioning == false && _contentScrollView.contentOffset.y <= 0 {
+                    self.setPanStartPoint(location)
                     self.startGestureTransition()
                 } else {
                     self.updateInteractiveTransition(animationRatio)
@@ -278,7 +295,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
         }
     }
     
-    func startGestureTransition() {
+    private func startGestureTransition() {
         if self.isTransitioning == false {
             self.isTransitioning = true
             switch (self.interactiveType) {
@@ -296,12 +313,21 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
         }
     }
     
-    func resetGestureTransitionSetting() {
+    private func resetGestureTransitionSetting() {
         self.isTransitioning = false
+    }
+    
+    private func setPanStartPoint(location: CGPoint) {
+        switch (self.direction) {
+        case .Top, .Bottom:
+            self.panLocationStart = location.y
+        case .Left, .Right:
+            self.panLocationStart = location.x
+        }
     }
 }
 
-// MARK: UIViewControllerAnimatedTransitioning
+// MARK: - UIViewControllerAnimatedTransitioning
 
 extension ARNTransitionAnimator: UIViewControllerAnimatedTransitioning {
     
@@ -328,7 +354,7 @@ extension ARNTransitionAnimator: UIViewControllerAnimatedTransitioning {
     }
 }
 
-// MARK: UIViewControllerTransitioningDelegate
+// MARK: - UIViewControllerTransitioningDelegate
 
 extension ARNTransitionAnimator: UIViewControllerTransitioningDelegate {
     
@@ -359,7 +385,7 @@ extension ARNTransitionAnimator: UIViewControllerTransitioningDelegate {
     }
 }
 
-// MARK: UIViewControllerInteractiveTransitioning
+// MARK: - UIViewControllerInteractiveTransitioning
 
 extension ARNTransitionAnimator {
     
@@ -381,7 +407,7 @@ extension ARNTransitionAnimator {
     }
 }
 
-// MARK: UIPercentDrivenInteractiveTransition
+// MARK: - UIPercentDrivenInteractiveTransition
 
 extension ARNTransitionAnimator {
     
@@ -420,7 +446,7 @@ extension ARNTransitionAnimator {
     }
 }
 
-// MARK: UIGestureRecognizerDelegate
+// MARK: - UIGestureRecognizerDelegate
 
 extension ARNTransitionAnimator: UIGestureRecognizerDelegate {
     
