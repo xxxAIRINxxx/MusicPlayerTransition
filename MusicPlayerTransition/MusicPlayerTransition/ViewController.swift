@@ -99,7 +99,7 @@ class ViewController: UIViewController {
                     self!.modalVC.view.removeFromSuperview()
                     containerView.addSubview(self!.modalVC.view)
                     self!.animator.interactiveType = .Dismiss
-                    self!.animator.gestureTargetView = self!.modalVC.imageView
+                    self!.animator.gestureTargetView = self!.modalVC.view
                     self!.animator.direction = .Bottom
                 } else {
                     UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
