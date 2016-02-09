@@ -1,6 +1,6 @@
 //
 //  ModalViewController.swift
-//  SoundCloudTransition
+//  MusicPlayerTransition
 //
 //  Created by xxxAIRINxxx on 2015/02/25.
 //  Copyright (c) 2015 xxxAIRINxxx. All rights reserved.

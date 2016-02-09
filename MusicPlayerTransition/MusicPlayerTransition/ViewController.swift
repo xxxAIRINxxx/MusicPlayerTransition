@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  
+//  MusicPlayerTransition
 //
 //  Created by xxxAIRINxxx on 2015/08/27.
 //  Copyright (c) 2015 xxxAIRINxxx. All rights reserved.
