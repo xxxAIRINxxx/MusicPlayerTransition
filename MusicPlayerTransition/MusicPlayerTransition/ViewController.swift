@@ -9,7 +9,7 @@
 import UIKit
 import ARNTransitionAnimator
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     @IBOutlet weak var containerView : UIView!
     @IBOutlet weak var tabBar : UITabBar!
@@ -121,16 +121,19 @@ class ViewController: UIViewController {
             containerView.addSubview(self!.view)
             self!.view.insertSubview(self!.modalVC.view, belowSubview: self!.tabBar)
             
-            self!.view.layoutSubviews()
+            self!.view.layoutIfNeeded()
+            self!.modalVC.view.layoutIfNeeded()
             
-            let startOriginY = 0 - CGRectGetHeight(self!.miniPlayerView.bounds)
-            let endOriginY = CGRectGetHeight(self!.containerView.bounds) - self!.miniPlayerView.frame.size.height
+            // miniPlayerView
+            let startOriginY = 0 - self!.miniPlayerView.bounds.size.height
+            let endOriginY = self!.containerView.bounds.size.height - self!.miniPlayerView.frame.size.height
             let diff = -startOriginY + endOriginY
-            let tabStartOriginY = CGRectGetHeight(containerView.bounds)
-            let tabEndOriginY = CGRectGetHeight(containerView.bounds) - CGRectGetHeight(self!.tabBar.bounds)
+            // tabBar
+            let tabStartOriginY = containerView.bounds.size.height
+            let tabEndOriginY = containerView.bounds.size.height - self!.tabBar.bounds.size.height
             let tabDiff = tabStartOriginY - tabEndOriginY
             
-            self!.tabBar.frame.origin.y = CGRectGetHeight(containerView.bounds)
+            self!.tabBar.frame.origin.y = containerView.bounds.size.height
             
             self!.animator.dismissalCancelAnimationHandler = { (containerView: UIView) in
                 self!.miniPlayerView.frame.origin.y = startOriginY
@@ -174,7 +177,7 @@ class ViewController: UIViewController {
         self.presentViewController(modalVC, animated: true, completion: nil)
     }
     
-    func generateImageWithColor(color: UIColor) -> UIImage {
+    private func generateImageWithColor(color: UIColor) -> UIImage {
         let rect = CGRectMake(0, 0, 1, 1)
         
         UIGraphicsBeginImageContext(rect.size)

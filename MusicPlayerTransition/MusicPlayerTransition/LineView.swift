@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LineView: UIView {
+final class LineView: UIView {
 
     override func drawRect(rect: CGRect) {
         let topLine = UIBezierPath(rect: CGRectMake(0, 0, self.frame.size.width, 0.5))

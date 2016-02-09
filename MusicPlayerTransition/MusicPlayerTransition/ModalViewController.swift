@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModalViewController: UIViewController {
+final class ModalViewController: UIViewController {
     
     @IBOutlet weak var imageView : UIImageView!
     
