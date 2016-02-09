@@ -103,13 +103,13 @@ class ViewController: UIViewController {
             
             self!.animator.presentationCompletionHandler = {(containerView: UIView, completeTransition: Bool) in
                 if completeTransition {
-                    self!.view.removeFromSuperview()
                     self!.modalVC.view.removeFromSuperview()
                     containerView.addSubview(self!.modalVC.view)
                     self!.animator.interactiveType = .Dismiss
                     self!.animator.gestureTargetView = self!.modalVC.imageView
                     self!.animator.direction = .Bottom
                 } else {
+                    self!.view.removeFromSuperview()
                     UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
                 }
             }
@@ -159,6 +159,8 @@ class ViewController: UIViewController {
                     self!.modalVC.view.removeFromSuperview()
                     self!.animator.gestureTargetView = self!.miniPlayerView
                     self!.animator.interactiveType = .Present
+                    
+                    self!.view.removeFromSuperview()
                     UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
                 }
             }
