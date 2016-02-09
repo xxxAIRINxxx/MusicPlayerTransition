@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .FullScreen
+        self.modalVC.modalPresentationStyle = .OverFullScreen
         self.modalVC.tapCloseButtonActionHandler = { [weak self] in
             self!.animator.interactiveType = .None
         }
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
             
             self!.animator.presentationCompletionHandler = {(containerView: UIView, completeTransition: Bool) in
                 if completeTransition {
-                    self!.view.removeFromSuperview()
+                    // self!.view.removeFromSuperview()
                     self!.modalVC.view.removeFromSuperview()
                     containerView.addSubview(self!.modalVC.view)
                     self!.animator.interactiveType = .Dismiss
