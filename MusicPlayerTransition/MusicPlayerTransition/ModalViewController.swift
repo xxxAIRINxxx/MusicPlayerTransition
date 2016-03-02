@@ -10,9 +10,17 @@ import UIKit
 
 final class ModalViewController: UIViewController {
     
-    @IBOutlet weak var imageView : UIImageView!
-    
     var tapCloseButtonActionHandler : (Void -> Void)?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let effect = UIBlurEffect(style: .Light)
+        let blurView = UIVisualEffectView(effect: effect)
+        blurView.frame = self.view.bounds
+        self.view.addSubview(blurView)
+        self.view.sendSubviewToBack(blurView)
+    }
     
     @IBAction func tapCloseButton() {
         self.tapCloseButtonActionHandler?()
