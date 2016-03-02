@@ -16,13 +16,13 @@ final class ViewController: UIViewController {
     @IBOutlet weak var miniPlayerView : LineView!
     @IBOutlet weak var miniPlayerButton : UIButton!
     
-    var animator : ARNTransitionAnimator!
-    var modalVC : ModalViewController!
+    private var animator : ARNTransitionAnimator!
+    private var modalVC : ModalViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
         self.modalVC.modalPresentationStyle = .OverFullScreen
         self.modalVC.tapCloseButtonActionHandler = { [unowned self] in
@@ -46,16 +46,17 @@ final class ViewController: UIViewController {
     }
     
     func setupAnimator() {
-        self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: modalVC)
+        self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: self.modalVC)
         self.animator.usingSpringWithDamping = 0.8
         self.animator.gestureTargetView = self.miniPlayerView
         self.animator.interactiveType = .Present
         
         // Present
         
-        self.animator.presentationBeforeHandler = { [unowned self] (containerView: UIView, transitionContext:
-            UIViewControllerContextTransitioning) in
+        self.animator.presentationBeforeHandler = { [unowned self] containerView, transitionContext in
+            print("start presentation")
             self.beginAppearanceTransition(false, animated: false)
+            
             self.animator.direction = .Top
             
             self.modalVC.view.frame.origin.y = self.miniPlayerView.frame.origin.y + self.miniPlayerView.frame.size.height
@@ -73,7 +74,7 @@ final class ViewController: UIViewController {
             let tabEndOriginY = containerView.frame.size.height
             let tabDiff = tabEndOriginY - tabStartOriginY
             
-            self.animator.presentationCancelAnimationHandler = { (containerView: UIView) in
+            self.animator.presentationCancelAnimationHandler = { containerView in
                 self.miniPlayerView.frame.origin.y = startOriginY
                 self.modalVC.view.frame.origin.y = self.miniPlayerView.frame.origin.y + self.miniPlayerView.frame.size.height
                 self.tabBar.frame.origin.y = tabStartOriginY
@@ -85,7 +86,7 @@ final class ViewController: UIViewController {
                 }
             }
             
-            self.animator.presentationAnimationHandler = { [unowned self] (containerView: UIView, percentComplete: CGFloat) in
+            self.animator.presentationAnimationHandler = { [unowned self] containerView, percentComplete in
                 let _percentComplete = percentComplete >= 0 ? percentComplete : 0
                 self.miniPlayerView.frame.origin.y = startOriginY - (diff * _percentComplete)
                 if self.miniPlayerView.frame.origin.y < endOriginY {
@@ -105,8 +106,9 @@ final class ViewController: UIViewController {
                 }
             }
             
-            self.animator.presentationCompletionHandler = {(containerView: UIView, completeTransition: Bool) in
+            self.animator.presentationCompletionHandler = { containerView, completeTransition in
                 self.endAppearanceTransition()
+                
                 if completeTransition {
                     self.miniPlayerView.alpha = 0.0
                     self.modalVC.view.removeFromSuperview()
@@ -123,8 +125,8 @@ final class ViewController: UIViewController {
         
         // Dismiss
         
-        self.animator.dismissalBeforeHandler = { [unowned self] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
-            containerView.addSubview(self.view)
+        self.animator.dismissalBeforeHandler = { [unowned self] containerView, transitionContext in
+            print("start dismissal")
             self.beginAppearanceTransition(true, animated: false)
             
             self.view.insertSubview(self.modalVC.view, belowSubview: self.tabBar)
@@ -144,7 +146,7 @@ final class ViewController: UIViewController {
             self.tabBar.frame.origin.y = containerView.bounds.size.height
             self.containerView.alpha = 0.5
             
-            self.animator.dismissalCancelAnimationHandler = { (containerView: UIView) in
+            self.animator.dismissalCancelAnimationHandler = { containerView in
                 self.miniPlayerView.frame.origin.y = startOriginY
                 self.modalVC.view.frame.origin.y = self.miniPlayerView.frame.origin.y + self.miniPlayerView.frame.size.height
                 self.tabBar.frame.origin.y = tabStartOriginY
@@ -156,7 +158,7 @@ final class ViewController: UIViewController {
                 }
             }
             
-            self.animator.dismissalAnimationHandler = {(containerView: UIView, percentComplete: CGFloat) in
+            self.animator.dismissalAnimationHandler = { containerView, percentComplete in
                 let _percentComplete = percentComplete >= -0.05 ? percentComplete : -0.05
                 self.miniPlayerView.frame.origin.y = startOriginY + (diff * _percentComplete)
                 self.modalVC.view.frame.origin.y = self.miniPlayerView.frame.origin.y + self.miniPlayerView.frame.size.height
@@ -171,8 +173,9 @@ final class ViewController: UIViewController {
                 }
             }
             
-            self.animator.dismissalCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
+            self.animator.dismissalCompletionHandler = { containerView, completeTransition in
                 self.endAppearanceTransition()
+                
                 if completeTransition {
                     self.modalVC.view.removeFromSuperview()
                     self.animator.gestureTargetView = self.miniPlayerView
@@ -191,7 +194,7 @@ final class ViewController: UIViewController {
     
     @IBAction func tapMiniPlayerButton() {
         self.animator.interactiveType = .None
-        self.presentViewController(modalVC, animated: true, completion: nil)
+        self.presentViewController(self.modalVC, animated: true, completion: nil)
     }
     
     private func generateImageWithColor(color: UIColor) -> UIImage {
