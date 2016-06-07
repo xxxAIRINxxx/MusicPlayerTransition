@@ -136,7 +136,7 @@ final class ViewController: UIViewController {
             
             // miniPlayerView
             let startOriginY = 0 - self.miniPlayerView.bounds.size.height
-            let endOriginY = self.containerView.bounds.size.height - self.miniPlayerView.frame.size.height
+            let endOriginY = self.containerView.bounds.size.height - self.tabBar.bounds.size.height - self.miniPlayerView.frame.size.height
             let diff = -startOriginY + endOriginY
             // tabBar
             let tabStartOriginY = containerView.bounds.size.height
