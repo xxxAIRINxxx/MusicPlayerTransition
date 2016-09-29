@@ -16,40 +16,40 @@ final class ViewController: UIViewController {
     @IBOutlet weak var miniPlayerView : LineView!
     @IBOutlet weak var miniPlayerButton : UIButton!
     
-    private var animator : ARNTransitionAnimator!
-    private var modalVC : ModalViewController!
+    fileprivate var animator : ARNTransitionAnimator!
+    fileprivate var modalVC : ModalViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .OverFullScreen
+        self.modalVC = storyboard.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController
+        self.modalVC.modalPresentationStyle = .overFullScreen
         self.modalVC.tapCloseButtonActionHandler = { [unowned self] in
-            self.animator.interactiveType = .None
+            self.animator.interactiveType = .none
         }
         
         let color = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
-        self.miniPlayerButton.setBackgroundImage(self.generateImageWithColor(color), forState: .Highlighted)
+        self.miniPlayerButton.setBackgroundImage(self.generateImageWithColor(color), for: .highlighted)
         
         self.setupAnimator()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("ViewController viewWillAppear")
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("ViewController viewWillDisappear")
     }
     
     func setupAnimator() {
-        self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: self.modalVC)
+        self.animator = ARNTransitionAnimator(operationType: .present, fromVC: self, toVC: self.modalVC)
         self.animator.usingSpringWithDamping = 0.8
         self.animator.gestureTargetView = self.miniPlayerView
-        self.animator.interactiveType = .Present
+        self.animator.interactiveType = .present
         
         // Present
         
@@ -57,7 +57,7 @@ final class ViewController: UIViewController {
             print("start presentation")
             self.beginAppearanceTransition(false, animated: false)
             
-            self.animator.direction = .Top
+            self.animator.direction = .top
             
             self.modalVC.view.frame.origin.y = self.miniPlayerView.frame.origin.y + self.miniPlayerView.frame.size.height
             self.view.insertSubview(self.modalVC.view, belowSubview: self.tabBar)
@@ -113,9 +113,9 @@ final class ViewController: UIViewController {
                     self.miniPlayerView.alpha = 0.0
                     self.modalVC.view.removeFromSuperview()
                     containerView.addSubview(self.modalVC.view)
-                    self.animator.interactiveType = .Dismiss
+                    self.animator.interactiveType = .dismiss
                     self.animator.gestureTargetView = self.modalVC.view
-                    self.animator.direction = .Bottom
+                    self.animator.direction = .bottom
                 } else {
                     self.beginAppearanceTransition(true, animated: false)
                     self.endAppearanceTransition()
@@ -179,7 +179,7 @@ final class ViewController: UIViewController {
                 if completeTransition {
                     self.modalVC.view.removeFromSuperview()
                     self.animator.gestureTargetView = self.miniPlayerView
-                    self.animator.interactiveType = .Present
+                    self.animator.interactiveType = .present
                 } else {
                     self.modalVC.view.removeFromSuperview()
                     containerView.addSubview(self.modalVC.view)
@@ -193,23 +193,23 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func tapMiniPlayerButton() {
-        self.animator.interactiveType = .None
-        self.presentViewController(self.modalVC, animated: true, completion: nil)
+        self.animator.interactiveType = .none
+        self.present(self.modalVC, animated: true, completion: nil)
     }
     
-    private func generateImageWithColor(color: UIColor) -> UIImage {
-        let rect = CGRectMake(0, 0, 1, 1)
+    fileprivate func generateImageWithColor(_ color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
 }
 
