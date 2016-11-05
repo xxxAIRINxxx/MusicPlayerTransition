@@ -16,31 +16,31 @@ final class ViewController: UIViewController {
     @IBOutlet weak var miniPlayerView : LineView!
     @IBOutlet weak var miniPlayerButton : UIButton!
     
-    private var animator : ARNTransitionAnimator!
-    private var modalVC : ModalViewController!
+    fileprivate var animator : ARNTransitionAnimator!
+    fileprivate var modalVC : ModalViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .OverFullScreen
+        self.modalVC = storyboard.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController
+        self.modalVC.modalPresentationStyle = .overFullScreen
         self.modalVC.tapCloseButtonActionHandler = { [unowned self] in
             self.animator.interactiveType = .None
         }
         
         let color = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
-        self.miniPlayerButton.setBackgroundImage(self.generateImageWithColor(color), forState: .Highlighted)
+        self.miniPlayerButton.setBackgroundImage(self.generateImageWithColor(color), for: .highlighted)
         
         self.setupAnimator()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("ViewController viewWillAppear")
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("ViewController viewWillDisappear")
     }
@@ -194,22 +194,22 @@ final class ViewController: UIViewController {
     
     @IBAction func tapMiniPlayerButton() {
         self.animator.interactiveType = .None
-        self.presentViewController(self.modalVC, animated: true, completion: nil)
+        self.present(self.modalVC, animated: true, completion: nil)
     }
     
-    private func generateImageWithColor(color: UIColor) -> UIImage {
-        let rect = CGRectMake(0, 0, 1, 1)
+    fileprivate func generateImageWithColor(_ color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
 }
 
