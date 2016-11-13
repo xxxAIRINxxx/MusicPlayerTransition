@@ -17,8 +17,8 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
     
     var completion: ((Bool) -> Void)?
     
-    private let miniPlayerStartFrame: CGRect
-    private let tabBarStartFrame: CGRect
+    private var miniPlayerStartFrame: CGRect
+    private var tabBarStartFrame: CGRect
     
     private var containerView: UIView?
     
@@ -38,31 +38,28 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
     func prepareContainer(_ transitionType: TransitionType, containerView: UIView, from fromVC: UIViewController, to toVC: UIViewController) {
         self.containerView = containerView
         if transitionType.isPresenting {
-            self.modalVC.view.removeFromSuperview()
+//            self.modalVC.view.removeFromSuperview()
             self.rootVC.view.insertSubview(self.modalVC.view, belowSubview: self.rootVC.tabBar)
         } else {
 //            self.modalVC.view.removeFromSuperview()
             self.rootVC.view.insertSubview(self.modalVC.view, belowSubview: self.rootVC.tabBar)
         }
+        self.rootVC.view.setNeedsLayout()
+        self.rootVC.view.layoutIfNeeded()
+        self.modalVC.view.setNeedsLayout()
+        self.modalVC.view.layoutIfNeeded()
+        
+        self.miniPlayerStartFrame = self.rootVC.miniPlayerView.frame
+        self.tabBarStartFrame = self.rootVC.tabBar.frame
     }
     
     func willAnimation(_ transitionType: TransitionType, containerView: UIView) {
         if transitionType.isPresenting {
             self.rootVC.beginAppearanceTransition(true, animated: false)
             
-            self.rootVC.view.setNeedsLayout()
-            self.rootVC.view.layoutIfNeeded()
-            self.modalVC.view.setNeedsLayout()
-            self.modalVC.view.layoutIfNeeded()
-            
             self.modalVC.view.frame.origin.y = self.rootVC.miniPlayerView.frame.origin.y + self.rootVC.miniPlayerView.frame.size.height
         } else {
             self.rootVC.beginAppearanceTransition(false, animated: false)
-            
-            self.rootVC.view.setNeedsLayout()
-            self.rootVC.view.layoutIfNeeded()
-            self.modalVC.view.setNeedsLayout()
-            self.modalVC.view.layoutIfNeeded()
             
             self.rootVC.miniPlayerView.alpha = 1.0
             self.rootVC.miniPlayerView.frame.origin.y = -self.rootVC.miniPlayerView.bounds.size.height
@@ -71,7 +68,6 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
     }
     
     func updateAnimation(_ transitionType: TransitionType, percentComplete: CGFloat) {
-        print(percentComplete)
         if transitionType.isPresenting {
             // miniPlayerView
             let startOriginY = self.miniPlayerStartFrame.origin.y
