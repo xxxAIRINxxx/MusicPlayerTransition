@@ -17,6 +17,7 @@
 		91B21A1D1B8E18A20067D200 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B21A1C1B8E18A20067D200 /* ModalViewController.swift */; };
 		91E79D8B1B940377001AE4BC /* playImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91E79D8A1B940377001AE4BC /* playImage.png */; };
 		91E79D8D1B941235001AE4BC /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E79D8C1B941235001AE4BC /* LineView.swift */; };
+		91F9CD401DCDC5D1005CD2C0 /* MusicPlayerTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F9CD3F1DCDC5D1005CD2C0 /* MusicPlayerTransitionAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		91B21A1C1B8E18A20067D200 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		91E79D8A1B940377001AE4BC /* playImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playImage.png; sourceTree = "<group>"; };
 		91E79D8C1B941235001AE4BC /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		91F9CD3F1DCDC5D1005CD2C0 /* MusicPlayerTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerTransitionAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		91B219F71B8E18600067D200 /* MusicPlayerTransition */ = {
 			isa = PBXGroup;
 			children = (
+				91F9CD3F1DCDC5D1005CD2C0 /* MusicPlayerTransitionAnimation.swift */,
 				91B219FA1B8E18600067D200 /* AppDelegate.swift */,
 				91B219FC1B8E18600067D200 /* ViewController.swift */,
 				91B21A1C1B8E18A20067D200 /* ModalViewController.swift */,
@@ -194,14 +197,16 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = xxxAIRINxxx;
 				TargetAttributes = {
 					91B219F41B8E18600067D200 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0810;
 					};
 					91B21A091B8E18600067D200 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0810;
 						TestTargetID = 91B219F41B8E18600067D200;
 					};
 				};
@@ -274,7 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DCC21A74FD29821FD1332EF9 /* [CP] Copy Pods Resources */ = {
@@ -303,6 +308,7 @@
 				91B219FD1B8E18600067D200 /* ViewController.swift in Sources */,
 				91B219FB1B8E18600067D200 /* AppDelegate.swift in Sources */,
 				91E79D8D1B941235001AE4BC /* LineView.swift in Sources */,
+				91F9CD401DCDC5D1005CD2C0 /* MusicPlayerTransitionAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,8 +363,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -386,6 +394,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -402,8 +411,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -422,6 +433,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -430,11 +443,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 076E21CD7C616D7FB44D6CBF /* Pods-MusicPlayerTransition.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicPlayerTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xxxAIRINxxx.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -442,11 +457,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4AB7B5CE34EAF79AF1FF705C /* Pods-MusicPlayerTransition.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicPlayerTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xxxAIRINxxx.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -466,6 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xxxAIRINxxx.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicPlayerTransition.app/MusicPlayerTransition";
 			};
 			name = Debug;
@@ -482,6 +500,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xxxAIRINxxx.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicPlayerTransition.app/MusicPlayerTransition";
 			};
 			name = Release;
