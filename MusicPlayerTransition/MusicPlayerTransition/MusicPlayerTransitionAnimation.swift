@@ -88,7 +88,6 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
             let alpha = 1.0 - (1.0 * percentComplete)
             self.rootVC.containerView.alpha = alpha + 0.5
             self.rootVC.tabBar.alpha = alpha
-            self.rootVC.miniPlayerView.subviews.forEach { $0.alpha = alpha }
         } else {
             // miniPlayerView
             let startOriginY = 0 - self.rootVC.miniPlayerView.bounds.size.height
@@ -108,7 +107,6 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
             self.rootVC.containerView.alpha = alpha + 0.5
             self.rootVC.tabBar.alpha = alpha
             self.rootVC.miniPlayerView.alpha = 1.0
-            self.rootVC.miniPlayerView.subviews.forEach { $0.alpha = alpha }
         }
     }
     
