@@ -24,18 +24,8 @@ final class TransitionAnimator {
         self.animation.willAnimation(self.transitionType, containerView: containerView)
     }
     
-    func animate(_ duration: TimeInterval, animations: @escaping ((Void) -> Void), completion: ((Bool) -> Void)? = nil) {
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        
-        UIView.animate(withDuration: duration,
-                       delay: 0.0,
-                       usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 0,
-                       options: .curveEaseOut,
-                       animations: animations) { finished in
-                        UIApplication.shared.endIgnoringInteractionEvents()
-                        completion?(finished)
-        }
+    func animate(_ duration: TimeInterval, animations: @escaping ((Void) -> Void), completion: ((Bool) -> Void)?) {
+        self.animation.animate(duration, animations: animations, completion: completion)
     }
     
     func updateAnimation(_ percentComplete: CGFloat) {
