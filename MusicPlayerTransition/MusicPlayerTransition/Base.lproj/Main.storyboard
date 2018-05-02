@@ -12,14 +12,14 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="ViewController" customModule="MusicPlayerTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MusicPlayerTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UI-Pu-Ue1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -81,48 +81,52 @@
                                     <constraint firstAttribute="height" constant="44" id="xFc-lj-9kp"/>
                                 </constraints>
                             </view>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFc-Xp-wdu">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPw-Cq-6UR">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzG-ax-Jw5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <items>
+                                            <tabBarItem systemItem="favorites" id="faK-86-vyn"/>
+                                            <tabBarItem systemItem="more" id="ytm-yu-QDB"/>
+                                        </items>
+                                    </tabBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="mmW-xV-qKc"/>
+                                    <constraint firstItem="IzG-ax-Jw5" firstAttribute="leading" secondItem="xPw-Cq-6UR" secondAttribute="leading" id="3gM-Zh-IzQ"/>
+                                    <constraint firstAttribute="height" constant="49" id="AyF-5y-v12"/>
+                                    <constraint firstAttribute="bottom" secondItem="IzG-ax-Jw5" secondAttribute="bottom" id="jBR-qv-6Uo"/>
+                                    <constraint firstAttribute="trailing" secondItem="IzG-ax-Jw5" secondAttribute="trailing" id="k4s-RD-5NP"/>
+                                    <constraint firstItem="IzG-ax-Jw5" firstAttribute="top" secondItem="xPw-Cq-6UR" secondAttribute="top" id="xor-o0-Zgo"/>
                                 </constraints>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="FNZ-Wj-RVK"/>
-                                    <tabBarItem systemItem="more" id="fcA-Qt-qoR"/>
-                                </items>
-                            </tabBar>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8UI-Pu-Ue1" secondAttribute="bottom" id="4A5-2y-55g"/>
                             <constraint firstAttribute="trailing" secondItem="8UI-Pu-Ue1" secondAttribute="trailing" id="AHl-If-Pcq"/>
-                            <constraint firstItem="BFc-Xp-wdu" firstAttribute="top" secondItem="moJ-gp-Frg" secondAttribute="bottom" id="Bht-YH-WDS"/>
-                            <constraint firstAttribute="trailing" secondItem="BFc-Xp-wdu" secondAttribute="trailing" id="Owe-dZ-1gt"/>
+                            <constraint firstItem="xPw-Cq-6UR" firstAttribute="top" secondItem="moJ-gp-Frg" secondAttribute="bottom" id="IN1-CU-ZjO"/>
                             <constraint firstAttribute="trailing" secondItem="moJ-gp-Frg" secondAttribute="trailing" id="TID-uy-iJD"/>
                             <constraint firstItem="8UI-Pu-Ue1" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="WNc-TO-JX4"/>
+                            <constraint firstAttribute="trailing" secondItem="xPw-Cq-6UR" secondAttribute="trailing" id="XOF-dJ-R0S"/>
                             <constraint firstItem="moJ-gp-Frg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fJG-0x-SG8"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="BFc-Xp-wdu" secondAttribute="bottom" id="fWt-pb-qSG"/>
-                            <constraint firstItem="BFc-Xp-wdu" firstAttribute="top" secondItem="8UI-Pu-Ue1" secondAttribute="bottom" id="jmX-cX-BTm"/>
-                            <constraint firstItem="BFc-Xp-wdu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="lRb-Y8-Qdp"/>
                             <constraint firstItem="8UI-Pu-Ue1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="r63-z0-lSY"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xPw-Cq-6UR" secondAttribute="bottom" id="u7I-WN-0zt"/>
+                            <constraint firstItem="xPw-Cq-6UR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wmR-QD-wMX"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="jmX-cX-BTm"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="8UI-Pu-Ue1" id="aug-uN-JJZ"/>
                         <outlet property="miniPlayerButton" destination="RCR-29-0LP" id="hit-Pb-U7h"/>
                         <outlet property="miniPlayerView" destination="moJ-gp-Frg" id="hIX-TV-dZ7"/>
-                        <outlet property="tabBar" destination="BFc-Xp-wdu" id="iuz-Tf-7Dd"/>
+                        <outlet property="tabBarView" destination="xPw-Cq-6UR" id="oUQ-Ci-gb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-847" y="338"/>
+            <point key="canvasLocation" x="-847.20000000000005" y="337.78110944527737"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="nyM-At-Qsi">
@@ -263,13 +267,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxu-vw-Gvu">
-                                <rect key="frame" x="0.0" y="0.0" width="39" height="80"/>
+                                <rect key="frame" x="16" y="20" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="goI-yg-yKK"/>
+                                    <constraint firstAttribute="height" constant="80" id="HHM-9F-kYE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="XPD-X7-lBn"/>
                                 </constraints>
                                 <state key="normal" title="Close">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -279,9 +283,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Oxu-vw-Gvu" firstAttribute="top" secondItem="j4Q-j1-Ggn" secondAttribute="top" id="PJD-7u-97D"/>
-                            <constraint firstItem="Oxu-vw-Gvu" firstAttribute="leading" secondItem="j4Q-j1-Ggn" secondAttribute="leading" id="qy6-oa-KXl"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oxu-vw-Gvu" secondAttribute="trailing" constant="20" symbolic="YES" id="zRP-MA-twh"/>
+                            <constraint firstItem="Oxu-vw-Gvu" firstAttribute="leading" secondItem="j4Q-j1-Ggn" secondAttribute="leading" constant="16" id="Dfb-bY-AK7"/>
+                            <constraint firstItem="Oxu-vw-Gvu" firstAttribute="top" secondItem="tkX-cX-wFU" secondAttribute="bottom" id="cV5-WQ-pgQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oxu-vw-Gvu" secondAttribute="trailing" constant="20" symbolic="YES" id="xLA-pr-kcl"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -289,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf8-4r-isx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="398"/>
+            <point key="canvasLocation" x="1173.5999999999999" y="397.60119940029989"/>
         </scene>
     </scenes>
     <resources>
