@@ -17,8 +17,8 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
     
     var completion: ((Bool) -> Void)?
     
-    private var miniPlayerStartFrame: CGRect
-    private var tabBarStartFrame: CGRect
+    private var miniPlayerStartFrame: CGRect = CGRect.zero
+    private var tabBarStartFrame: CGRect = CGRect.zero
     
     private var containerView: UIView?
     
@@ -29,9 +29,6 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
     init(rootVC: ViewController, modalVC: ModalViewController) {
         self.rootVC = rootVC
         self.modalVC = modalVC
-        
-        self.miniPlayerStartFrame = rootVC.miniPlayerView.frame
-        self.tabBarStartFrame = rootVC.tabBar.frame
     }
     
     // @see : http://stackoverflow.com/questions/25588617/ios-8-screen-blank-after-dismissing-view-controller-with-custom-presentation
@@ -68,6 +65,7 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
     }
     
     func updateAnimation(_ transitionType: TransitionType, percentComplete: CGFloat) {
+        print(percentComplete)
         if transitionType.isPresenting {
             // miniPlayerView
             let startOriginY = self.miniPlayerStartFrame.origin.y
@@ -78,8 +76,9 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
             let tabEndOriginY = self.modalVC.view.frame.size.height
             let tabDiff = tabEndOriginY - tabStartOriginY
             
+            print(diff)
             let playerY = startOriginY - (diff * percentComplete)
-            self.rootVC.miniPlayerView.frame.origin.y = max(min(playerY, self.miniPlayerStartFrame.origin.y), endOriginY)
+            self.rootVC.miniPlayerView.frame.origin.y = max(min(playerY,  self.miniPlayerStartFrame.origin.y), endOriginY)
 
             self.modalVC.view.frame.origin.y = self.rootVC.miniPlayerView.frame.origin.y + self.rootVC.miniPlayerView.frame.size.height
             let tabY = tabStartOriginY + (tabDiff * percentComplete)

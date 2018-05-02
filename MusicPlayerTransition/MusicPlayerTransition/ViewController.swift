@@ -24,7 +24,7 @@ final class ViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.modalVC = storyboard.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .overFullScreen
+        self.modalVC.modalPresentationStyle = .overCurrentContext
         
         let color = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
         self.miniPlayerButton.setBackgroundImage(self.generateImageWithColor(color), for: .highlighted)
@@ -49,8 +49,7 @@ final class ViewController: UIViewController {
         animation.completion = { [weak self] isPresenting in
             if isPresenting {
                 guard let _self = self else { return }
-                let modalGestureHandler = TransitionGestureHandler(targetVC: _self, direction: .bottom)
-                modalGestureHandler.registerGesture(_self.modalVC.view)
+                let modalGestureHandler = TransitionGestureHandler(targetView: _self.modalVC.view, direction: .bottom)
                 modalGestureHandler.panCompletionThreshold = 15.0
                 _self.animator?.registerInteractiveTransitioning(.dismiss, gestureHandler: modalGestureHandler)
             } else {
@@ -58,9 +57,9 @@ final class ViewController: UIViewController {
             }
         }
         
-        let gestureHandler = TransitionGestureHandler(targetVC: self, direction: .top)
-        gestureHandler.registerGesture(self.miniPlayerView)
+        let gestureHandler = TransitionGestureHandler(targetView: self.miniPlayerView, direction: .top)
         gestureHandler.panCompletionThreshold = 15.0
+        gestureHandler.panFrameSize = self.view.bounds.size
 
         self.animator = ARNTransitionAnimator(duration: 0.5, animation: animation)
         self.animator?.registerInteractiveTransitioning(.present, gestureHandler: gestureHandler)
