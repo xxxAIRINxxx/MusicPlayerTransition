@@ -1,8 +1,8 @@
 # MusicPlayerTransition
 
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.1](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
-[![Xcode 8.0+](https://img.shields.io/badge/Xcode-8.0-blue.svg?style=flat)](https://developer.apple.com/swift/)
+[![Xcode 9.3+](https://img.shields.io/badge/Xcode-8.0-blue.svg?style=flat)](https://developer.apple.com/swift/)
 
 ![capture](capture.gif "capture")
 
@@ -22,9 +22,9 @@ This sample have created as a showcase of ARNTransitionAnimator.
 
 ## Requirements
 
-* iOS 8.0+
-* Swift 3.0+
-* Xcode 8.0+
+* iOS 9.0+
+* Swift 4.1+
+* Xcode 9.3+
 
 ## License
 
