@@ -76,7 +76,7 @@ extension InteractiveTransitioning {
     override func finish() {
         super.finish()
         
-        let d = self.transitionDuration - (self.transitionDuration * self.percentComplete)
+        let d = self.transitionDuration - (self.transitionDuration * abs(self.gestureHandler.percentComplete))
         
         self.animator.animate(TimeInterval(d), animations: { [weak self] in self?.animator.updateAnimation(1.0) }) { [weak self] finished in
             self?.animator.finishAnimation(true)
@@ -87,7 +87,7 @@ extension InteractiveTransitioning {
     override func cancel() {
         super.cancel()
         
-        let d = self.transitionDuration * (1.0 - self.percentComplete)
+        let d = self.transitionDuration * abs(self.gestureHandler.percentComplete)
         
         self.animator.animate(TimeInterval(d), animations: { [weak self] in self?.animator.updateAnimation(0.0) }) { [weak self] finished in
             self?.animator.finishAnimation(false)

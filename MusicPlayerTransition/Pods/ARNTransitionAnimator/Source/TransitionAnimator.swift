@@ -24,7 +24,7 @@ final class TransitionAnimator {
         self.animation.willAnimation(self.transitionType, containerView: containerView)
     }
     
-    func animate(_ duration: TimeInterval, animations: @escaping ((Void) -> Void), completion: ((Bool) -> Void)?) {
+    func animate(_ duration: TimeInterval, animations: @escaping (() -> Void), completion: ((Bool) -> Void)?) {
         self.animation.animate(duration, animations: animations, completion: completion)
     }
     

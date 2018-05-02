@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0B7CE93DC5CBB6B747E464910AED204E /* TransitionGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6001BC7086182EF5A62831E65AC412 /* TransitionGestureHandler.swift */; };
-		14C304E3F8528C543D279C33D3274C9E /* Pods-MusicPlayerTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BA989C28AB107B20EEC6A99E73C432 /* Pods-MusicPlayerTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D6B3E1C39EC8D1FB184491582F61493 /* ARNTransitionAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9312B5FA05577D1B410E037F071EE457 /* ARNTransitionAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14C304E3F8528C543D279C33D3274C9E /* Pods-MusicPlayerTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CAF22029180E304DD6282E3292DFF30 /* Pods-MusicPlayerTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D6B3E1C39EC8D1FB184491582F61493 /* ARNTransitionAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D365E055A91B09FB21A20526284504DE /* ARNTransitionAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76687322D59517C2B74CE80093DC5699 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F87BA7E25B74ED0CD79E8CBF3B1000 /* TransitionAnimator.swift */; };
-		8018A735B4008A838810E4EE10AD5F84 /* Pods-MusicPlayerTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F831A7199AB195CF0FF943F8918D004 /* Pods-MusicPlayerTransition-dummy.m */; };
+		8018A735B4008A838810E4EE10AD5F84 /* Pods-MusicPlayerTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C437FA63202FC2EF91EFE5FCB47DE /* Pods-MusicPlayerTransition-dummy.m */; };
+		9396BE66E3849784396BAB0AEF586BE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		94F71DC34BB28FCE3AE6ED51A4D8A1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B4971FE2B4F0CBABED443CA0EF532825 /* AnimatedTransitioning .swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F63455E161DA56EE26156EFE0DD70 /* AnimatedTransitioning .swift */; };
-		BD5DDFF736C298815469763A3541DD84 /* ARNTransitionAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 370178D5276B3649550B27BC52F6B0AF /* ARNTransitionAnimator-dummy.m */; };
+		BD5DDFF736C298815469763A3541DD84 /* ARNTransitionAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D281B55A5EE00B6B29969202B209233 /* ARNTransitionAnimator-dummy.m */; };
 		C19AB3DFD5242F7A77940DED7CC09ABC /* InteractiveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D4451D46FB336196F728C3C44B428A /* InteractiveTransitioning.swift */; };
-		D52912C96956FB033BDBBAF75AB3CBF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		D7657055C88075DDC87827760427E77A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		E953D92D00C14725130989EE82F62903 /* TransitionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F8B4491FA88D32F59FCFA09DAADC0 /* TransitionAnimatable.swift */; };
 		FD76FD931F077279551E8F125671772F /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76577FB420567508A842284D1E0EA7AC /* ARNTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
@@ -33,30 +33,30 @@
 
 /* Begin PBXFileReference section */
 		018D656E1745CD1646610FA05CC8E19E /* ARNTransitionAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ARNTransitionAnimator.framework; path = ARNTransitionAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D96C70F497647A90D5003DFF2352726 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F831A7199AB195CF0FF943F8918D004 /* Pods-MusicPlayerTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicPlayerTransition-dummy.m"; sourceTree = "<group>"; };
-		1F6A05AC822D145DA79AAC7EC272DAD2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		220603EB166B3B5B83C09F739270B58B /* Pods-MusicPlayerTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicPlayerTransition.modulemap"; sourceTree = "<group>"; };
-		30BA989C28AB107B20EEC6A99E73C432 /* Pods-MusicPlayerTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicPlayerTransition-umbrella.h"; sourceTree = "<group>"; };
-		370178D5276B3649550B27BC52F6B0AF /* ARNTransitionAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARNTransitionAnimator-dummy.m"; sourceTree = "<group>"; };
-		4399C6A7B065B8BBF8A2CA54F367D0C6 /* ARNTransitionAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ARNTransitionAnimator.modulemap; sourceTree = "<group>"; };
-		4839F9CD0B77BBB6A29C633EA00C3AA2 /* Pods-MusicPlayerTransition-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicPlayerTransition-resources.sh"; sourceTree = "<group>"; };
-		48B90E3F7131E211F5A6B2ADADDE2891 /* Pods-MusicPlayerTransition-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicPlayerTransition-acknowledgements.markdown"; sourceTree = "<group>"; };
-		57F24554CFB8F43FC0EEBCE7ABD4E08A /* Pods-MusicPlayerTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicPlayerTransition.release.xcconfig"; sourceTree = "<group>"; };
+		16BB5DAD4CC92397F928E2EFD8CD8B78 /* ARNTransitionAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARNTransitionAnimator.xcconfig; sourceTree = "<group>"; };
+		1CAF22029180E304DD6282E3292DFF30 /* Pods-MusicPlayerTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicPlayerTransition-umbrella.h"; sourceTree = "<group>"; };
+		2D281B55A5EE00B6B29969202B209233 /* ARNTransitionAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARNTransitionAnimator-dummy.m"; sourceTree = "<group>"; };
+		3F6769FBA26B433253CA768CF6887315 /* Pods-MusicPlayerTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicPlayerTransition.release.xcconfig"; sourceTree = "<group>"; };
+		5B554CAE8254B78D9556C15690179AA5 /* ARNTransitionAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-prefix.pch"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6E93E02455EFC1CB888BF864B6221AF3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76577FB420567508A842284D1E0EA7AC /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARNTransitionAnimator.swift; path = Source/ARNTransitionAnimator.swift; sourceTree = "<group>"; };
-		7A810737103E2F784E5169A9A1F01895 /* ARNTransitionAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARNTransitionAnimator.xcconfig; sourceTree = "<group>"; };
 		84F87BA7E25B74ED0CD79E8CBF3B1000 /* TransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionAnimator.swift; path = Source/TransitionAnimator.swift; sourceTree = "<group>"; };
-		8554435E8C7FE7D7CCDF752DFA607F2D /* ARNTransitionAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-prefix.pch"; sourceTree = "<group>"; };
-		8C46ACB27F47C38DD4B1F59A76C1080D /* Pods-MusicPlayerTransition-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicPlayerTransition-frameworks.sh"; sourceTree = "<group>"; };
-		9312B5FA05577D1B410E037F071EE457 /* ARNTransitionAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C41E0C635E6DE4F7A835AB975D4582F6 /* Pods-MusicPlayerTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicPlayerTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		B3E56C741F6CD12C2E36B49A60AF2CA0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B77076F482863EE812200FFCAC686AAA /* Pods-MusicPlayerTransition-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicPlayerTransition-resources.sh"; sourceTree = "<group>"; };
+		C3C4EDDE2C09634D0FEB2095F02BA872 /* Pods-MusicPlayerTransition-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicPlayerTransition-frameworks.sh"; sourceTree = "<group>"; };
 		C4F09145C5D47A534723C9A33BB0096D /* Pods_MusicPlayerTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicPlayerTransition.framework; path = "Pods-MusicPlayerTransition.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D4451D46FB336196F728C3C44B428A /* InteractiveTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InteractiveTransitioning.swift; path = Source/InteractiveTransitioning.swift; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D20F63455E161DA56EE26156EFE0DD70 /* AnimatedTransitioning .swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AnimatedTransitioning .swift"; path = "Source/AnimatedTransitioning .swift"; sourceTree = "<group>"; };
-		DDAEC52C8B9A75B146A01A7EED3ACD82 /* Pods-MusicPlayerTransition-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicPlayerTransition-acknowledgements.plist"; sourceTree = "<group>"; };
+		D365E055A91B09FB21A20526284504DE /* ARNTransitionAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-umbrella.h"; sourceTree = "<group>"; };
+		D3D9EC36539E16E2D809B1064E1E5BE3 /* Pods-MusicPlayerTransition-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicPlayerTransition-acknowledgements.plist"; sourceTree = "<group>"; };
+		D92B95A8F1B99B15B95840A45708522E /* Pods-MusicPlayerTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MusicPlayerTransition.modulemap"; sourceTree = "<group>"; };
 		DE8F8B4491FA88D32F59FCFA09DAADC0 /* TransitionAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionAnimatable.swift; path = Source/TransitionAnimatable.swift; sourceTree = "<group>"; };
+		E06C437FA63202FC2EF91EFE5FCB47DE /* Pods-MusicPlayerTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicPlayerTransition-dummy.m"; sourceTree = "<group>"; };
+		E62533420DAE646FF78DA5B8ACD8483B /* Pods-MusicPlayerTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicPlayerTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		E9B557F5A622801A201B710D471C7F58 /* Pods-MusicPlayerTransition-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicPlayerTransition-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EF2445A34AFA894F0FED1DF275090A45 /* ARNTransitionAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ARNTransitionAnimator.modulemap; sourceTree = "<group>"; };
 		FB6001BC7086182EF5A62831E65AC412 /* TransitionGestureHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionGestureHandler.swift; path = Source/TransitionGestureHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D52912C96956FB033BDBBAF75AB3CBF9 /* Foundation.framework in Frameworks */,
+				9396BE66E3849784396BAB0AEF586BE5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7657055C88075DDC87827760427E77A /* Foundation.framework in Frameworks */,
+				94F71DC34BB28FCE3AE6ED51A4D8A1B9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,26 +97,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		464725EBD345D7F5F492CFC3C52C7188 /* Support Files */ = {
+		28E960F86624BE40A477157308E8E7A9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4399C6A7B065B8BBF8A2CA54F367D0C6 /* ARNTransitionAnimator.modulemap */,
-				7A810737103E2F784E5169A9A1F01895 /* ARNTransitionAnimator.xcconfig */,
-				370178D5276B3649550B27BC52F6B0AF /* ARNTransitionAnimator-dummy.m */,
-				8554435E8C7FE7D7CCDF752DFA607F2D /* ARNTransitionAnimator-prefix.pch */,
-				9312B5FA05577D1B410E037F071EE457 /* ARNTransitionAnimator-umbrella.h */,
-				0D96C70F497647A90D5003DFF2352726 /* Info.plist */,
+				EF2445A34AFA894F0FED1DF275090A45 /* ARNTransitionAnimator.modulemap */,
+				16BB5DAD4CC92397F928E2EFD8CD8B78 /* ARNTransitionAnimator.xcconfig */,
+				2D281B55A5EE00B6B29969202B209233 /* ARNTransitionAnimator-dummy.m */,
+				5B554CAE8254B78D9556C15690179AA5 /* ARNTransitionAnimator-prefix.pch */,
+				D365E055A91B09FB21A20526284504DE /* ARNTransitionAnimator-umbrella.h */,
+				B3E56C741F6CD12C2E36B49A60AF2CA0 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ARNTransitionAnimator";
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -139,44 +131,52 @@
 				DE8F8B4491FA88D32F59FCFA09DAADC0 /* TransitionAnimatable.swift */,
 				84F87BA7E25B74ED0CD79E8CBF3B1000 /* TransitionAnimator.swift */,
 				FB6001BC7086182EF5A62831E65AC412 /* TransitionGestureHandler.swift */,
-				464725EBD345D7F5F492CFC3C52C7188 /* Support Files */,
+				28E960F86624BE40A477157308E8E7A9 /* Support Files */,
 			);
 			name = ARNTransitionAnimator;
 			path = ARNTransitionAnimator;
 			sourceTree = "<group>";
 		};
-		9669E7970E07B8931319027CA997B64E /* Pods-MusicPlayerTransition */ = {
+		B0665D2F67F597D8D270EE39D8F4EC9E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1F6A05AC822D145DA79AAC7EC272DAD2 /* Info.plist */,
-				220603EB166B3B5B83C09F739270B58B /* Pods-MusicPlayerTransition.modulemap */,
-				48B90E3F7131E211F5A6B2ADADDE2891 /* Pods-MusicPlayerTransition-acknowledgements.markdown */,
-				DDAEC52C8B9A75B146A01A7EED3ACD82 /* Pods-MusicPlayerTransition-acknowledgements.plist */,
-				0F831A7199AB195CF0FF943F8918D004 /* Pods-MusicPlayerTransition-dummy.m */,
-				8C46ACB27F47C38DD4B1F59A76C1080D /* Pods-MusicPlayerTransition-frameworks.sh */,
-				4839F9CD0B77BBB6A29C633EA00C3AA2 /* Pods-MusicPlayerTransition-resources.sh */,
-				30BA989C28AB107B20EEC6A99E73C432 /* Pods-MusicPlayerTransition-umbrella.h */,
-				C41E0C635E6DE4F7A835AB975D4582F6 /* Pods-MusicPlayerTransition.debug.xcconfig */,
-				57F24554CFB8F43FC0EEBCE7ABD4E08A /* Pods-MusicPlayerTransition.release.xcconfig */,
+				B1C32A00FD12CDF2DB01827DAD09E50B /* Pods-MusicPlayerTransition */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B1C32A00FD12CDF2DB01827DAD09E50B /* Pods-MusicPlayerTransition */ = {
+			isa = PBXGroup;
+			children = (
+				6E93E02455EFC1CB888BF864B6221AF3 /* Info.plist */,
+				D92B95A8F1B99B15B95840A45708522E /* Pods-MusicPlayerTransition.modulemap */,
+				E9B557F5A622801A201B710D471C7F58 /* Pods-MusicPlayerTransition-acknowledgements.markdown */,
+				D3D9EC36539E16E2D809B1064E1E5BE3 /* Pods-MusicPlayerTransition-acknowledgements.plist */,
+				E06C437FA63202FC2EF91EFE5FCB47DE /* Pods-MusicPlayerTransition-dummy.m */,
+				C3C4EDDE2C09634D0FEB2095F02BA872 /* Pods-MusicPlayerTransition-frameworks.sh */,
+				B77076F482863EE812200FFCAC686AAA /* Pods-MusicPlayerTransition-resources.sh */,
+				1CAF22029180E304DD6282E3292DFF30 /* Pods-MusicPlayerTransition-umbrella.h */,
+				E62533420DAE646FF78DA5B8ACD8483B /* Pods-MusicPlayerTransition.debug.xcconfig */,
+				3F6769FBA26B433253CA768CF6887315 /* Pods-MusicPlayerTransition.release.xcconfig */,
 			);
 			name = "Pods-MusicPlayerTransition";
 			path = "Target Support Files/Pods-MusicPlayerTransition";
 			sourceTree = "<group>";
 		};
-		B0665D2F67F597D8D270EE39D8F4EC9E /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9669E7970E07B8931319027CA997B64E /* Pods-MusicPlayerTransition */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +242,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -298,75 +298,161 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		2EF1143ACA09ACF9E50FC52E141E6ECC /* Debug */ = {
+		2C186899DB85AED560E49CC341E90C76 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A810737103E2F784E5169A9A1F01895 /* ARNTransitionAnimator.xcconfig */;
+			baseConfigurationReference = 16BB5DAD4CC92397F928E2EFD8CD8B78 /* ARNTransitionAnimator.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ARNTransitionAnimator/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_MODULE_NAME = ARNTransitionAnimator;
 				PRODUCT_NAME = ARNTransitionAnimator;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		78BEEA36329D56AB657EF3FBFCDF234A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E62533420DAE646FF78DA5B8ACD8483B /* Pods-MusicPlayerTransition.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MusicPlayerTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		893F553228D75697A8D49D289E417508 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16BB5DAD4CC92397F928E2EFD8CD8B78 /* ARNTransitionAnimator.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ARNTransitionAnimator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator.modulemap";
+				PRODUCT_MODULE_NAME = ARNTransitionAnimator;
+				PRODUCT_NAME = ARNTransitionAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -375,146 +461,96 @@
 			};
 			name = Debug;
 		};
-		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+		B0F51458DDD735AB2C4FA1F0E4583A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F6769FBA26B433253CA768CF6887315 /* Pods-MusicPlayerTransition.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MusicPlayerTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		6C9257E401F63598CE75A09960D3BBF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C41E0C635E6DE4F7A835AB975D4582F6 /* Pods-MusicPlayerTransition.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MusicPlayerTransition/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MusicPlayerTransition;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C77282FEAFB8A73BE9AE05DA76890C42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A810737103E2F784E5169A9A1F01895 /* ARNTransitionAnimator.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ARNTransitionAnimator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ARNTransitionAnimator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F89F5FB5B23C05A09EA7BBD20506DAF3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57F24554CFB8F43FC0EEBCE7ABD4E08A /* Pods-MusicPlayerTransition.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MusicPlayerTransition/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MusicPlayerTransition;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -524,8 +560,8 @@
 		0925D6270067ED36B5FE7FD0540CE933 /* Build configuration list for PBXNativeTarget "ARNTransitionAnimator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2EF1143ACA09ACF9E50FC52E141E6ECC /* Debug */,
-				C77282FEAFB8A73BE9AE05DA76890C42 /* Release */,
+				893F553228D75697A8D49D289E417508 /* Debug */,
+				2C186899DB85AED560E49CC341E90C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -533,8 +569,8 @@
 		1D08FCA786BA02463440DFBAA11FDC21 /* Build configuration list for PBXNativeTarget "Pods-MusicPlayerTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6C9257E401F63598CE75A09960D3BBF2 /* Debug */,
-				F89F5FB5B23C05A09EA7BBD20506DAF3 /* Release */,
+				78BEEA36329D56AB657EF3FBFCDF234A /* Debug */,
+				B0F51458DDD735AB2C4FA1F0E4583A65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -542,8 +578,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
-				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

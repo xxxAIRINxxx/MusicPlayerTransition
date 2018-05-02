@@ -10,7 +10,7 @@ import UIKit
 
 final class ModalViewController: UIViewController {
     
-    var tapCloseButtonActionHandler : ((Void) -> Void)?
+    var tapCloseButtonActionHandler : (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
