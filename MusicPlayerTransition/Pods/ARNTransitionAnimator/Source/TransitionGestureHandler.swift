@@ -148,6 +148,9 @@ public final class TransitionGestureHandler : NSObject {
             if scrollView.contentOffset.y <= 0 && scrollView.isTracking {
                 return true
             }
+            if scrollView.contentSize.height < scrollView.frame.size.height {
+                return true
+            }
         } else {
             return true
         }

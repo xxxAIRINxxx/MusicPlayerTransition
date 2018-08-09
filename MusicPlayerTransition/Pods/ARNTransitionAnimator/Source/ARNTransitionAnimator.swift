@@ -73,3 +73,39 @@ extension ARNTransitionAnimator : UIViewControllerTransitioningDelegate {
         return i
     }
 }
+
+extension ARNTransitionAnimator: UINavigationControllerDelegate {
+    
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
+        return self.warappDelegate(navigationController, operation: operation, fromVC: fromVC, toVC: toVC)
+    }
+    
+    public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning?
+    {
+        return self.warappDelegate(navigationController, animationController: animationController)
+    }
+}
+
+// MARK: - UINavigationControllerDelegate Wrapper
+
+extension ARNTransitionAnimator {
+    
+    public func warappDelegate(_ navigationController: UINavigationController, operation: UINavigationControllerOperation, fromVC: UIViewController, toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .push {
+            let animator = TransitionAnimator(transitionType: .push, animation: self.animation)
+            return AnimatedTransitioning(animator: animator, duration: self.duration)
+        } else if operation == .pop {
+            let animator = TransitionAnimator(transitionType: .pop, animation: self.animation)
+            return AnimatedTransitioning(animator: animator, duration: self.duration)
+        }
+        
+        return nil
+    }
+    
+    public func warappDelegate(_ navigationController: UINavigationController, animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        guard let i = self.interactiveTransitioning , !i.animator.transitionType.isPresenting else { return nil }
+        if !i.gestureHandler.isTransitioning { return nil }
+        return i
+    }
+}
