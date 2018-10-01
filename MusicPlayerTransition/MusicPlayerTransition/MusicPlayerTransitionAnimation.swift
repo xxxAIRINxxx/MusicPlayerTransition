@@ -35,11 +35,9 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
     func prepareContainer(_ transitionType: TransitionType, containerView: UIView, from fromVC: UIViewController, to toVC: UIViewController) {
         self.containerView = containerView
         if transitionType.isPresenting {
-//            self.modalVC.view.removeFromSuperview()
-            self.rootVC.view.insertSubview(self.modalVC.view, belowSubview: self.rootVC.tabBarView)
+            self.rootVC.view.insertSubview(self.modalVC.view, belowSubview: self.rootVC.miniPlayerView)
         } else {
-//            self.modalVC.view.removeFromSuperview()
-            self.rootVC.view.insertSubview(self.modalVC.view, belowSubview: self.rootVC.tabBarView)
+            self.rootVC.view.insertSubview(self.modalVC.view, belowSubview: self.rootVC.miniPlayerView)
         }
         self.rootVC.view.setNeedsLayout()
         self.rootVC.view.layoutIfNeeded()
@@ -47,7 +45,7 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
         self.modalVC.view.layoutIfNeeded()
         
         self.miniPlayerStartFrame = self.rootVC.miniPlayerView.frame
-        self.tabBarStartFrame = self.rootVC.tabBarView.frame
+        self.tabBarStartFrame = self.rootVC.tabBarController!.tabBar.frame
     }
     
     func willAnimation(_ transitionType: TransitionType, containerView: UIView) {
@@ -60,12 +58,11 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
             
             self.rootVC.miniPlayerView.alpha = 1.0
             self.rootVC.miniPlayerView.frame.origin.y = -self.rootVC.miniPlayerView.bounds.size.height
-            self.rootVC.tabBarView.frame.origin.y = containerView.bounds.size.height
+            self.rootVC.tabBarController!.tabBar.frame.origin.y = containerView.bounds.size.height
         }
     }
     
     func updateAnimation(_ transitionType: TransitionType, percentComplete: CGFloat) {
-        print(percentComplete)
         if transitionType.isPresenting {
             // miniPlayerView
             let startOriginY = self.miniPlayerStartFrame.origin.y
@@ -81,11 +78,12 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
 
             self.modalVC.view.frame.origin.y = self.rootVC.miniPlayerView.frame.origin.y + self.rootVC.miniPlayerView.frame.size.height
             let tabY = tabStartOriginY + (tabDiff * percentComplete)
-            self.rootVC.tabBarView.frame.origin.y = min(max(tabY, self.tabBarStartFrame.origin.y), tabEndOriginY)
+            self.rootVC.tabBarController!.tabBar.frame.origin.y = min(max(tabY, self.tabBarStartFrame.origin.y), tabEndOriginY)
             
             let alpha = 1.0 - (1.0 * percentComplete)
-            self.rootVC.containerView.alpha = alpha + 0.5
-            self.rootVC.tabBarView.alpha = alpha
+            self.rootVC.containerView.subviews.forEach { $0.alpha = alpha + 0.4 }
+//            self.rootVC.containerView.alpha = alpha + 0.1
+            self.rootVC.tabBarController!.tabBar.alpha = alpha
         } else {
             // miniPlayerView
             let startOriginY = 0 - self.rootVC.miniPlayerView.bounds.size.height
@@ -99,12 +97,11 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable {
             self.rootVC.miniPlayerView.frame.origin.y = startOriginY + (diff * percentComplete)
             self.modalVC.view.frame.origin.y = self.rootVC.miniPlayerView.frame.origin.y + self.rootVC.miniPlayerView.frame.size.height
             
-            self.rootVC.tabBarView.frame.origin.y = tabStartOriginY - (tabDiff *  percentComplete)
+            self.rootVC.tabBarController!.tabBar.frame.origin.y = tabStartOriginY - (tabDiff * (1.0 - percentComplete))
             
             let alpha = 1.0 * percentComplete
-            self.rootVC.containerView.alpha = alpha + 0.5
-            self.rootVC.tabBarView.alpha = alpha
-            self.rootVC.miniPlayerView.alpha = 1.0
+            self.rootVC.containerView.subviews.forEach { $0.alpha = alpha + 0.4 }
+            self.rootVC.tabBarController!.tabBar.alpha = alpha
         }
     }
     

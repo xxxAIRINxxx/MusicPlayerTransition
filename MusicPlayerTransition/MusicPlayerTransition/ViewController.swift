@@ -12,7 +12,6 @@ import ARNTransitionAnimator
 final class ViewController: UIViewController {
     
     @IBOutlet fileprivate(set) weak var containerView : UIView!
-    @IBOutlet fileprivate(set) weak var tabBarView : UIView!
     @IBOutlet fileprivate(set) weak var miniPlayerView : LineView!
     @IBOutlet fileprivate(set) weak var miniPlayerButton : UIButton!
     

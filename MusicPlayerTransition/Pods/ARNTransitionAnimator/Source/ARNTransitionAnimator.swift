@@ -76,7 +76,7 @@ extension ARNTransitionAnimator : UIViewControllerTransitioningDelegate {
 
 extension ARNTransitionAnimator: UINavigationControllerDelegate {
     
-    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
         return self.warappDelegate(navigationController, operation: operation, fromVC: fromVC, toVC: toVC)
     }
@@ -91,7 +91,7 @@ extension ARNTransitionAnimator: UINavigationControllerDelegate {
 
 extension ARNTransitionAnimator {
     
-    public func warappDelegate(_ navigationController: UINavigationController, operation: UINavigationControllerOperation, fromVC: UIViewController, toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func warappDelegate(_ navigationController: UINavigationController, operation: UINavigationController.Operation, fromVC: UIViewController, toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == .push {
             let animator = TransitionAnimator(transitionType: .push, animation: self.animation)
             return AnimatedTransitioning(animator: animator, duration: self.duration)

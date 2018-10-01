@@ -1,21 +1,22 @@
 # ARNTransitionAnimator
 
 [![Version](https://img.shields.io/cocoapods/v/ARNTransitionAnimator.svg?style=flat)](http://cocoadocs.org/docsets/ARNTransitionAnimator)
-[![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
-[![Xcode 9.3+](https://img.shields.io/badge/Xcode-9.3+-blue.svg?style=flat)](https://developer.apple.com/swift/)
+[![Xcode 10+](https://img.shields.io/badge/Xcode-10+-blue.svg?style=flat)](https://developer.apple.com/swift/)
 
 Custom transition & interactive transition animator for iOS. written in Swift.
 
 ## Requirements
 
-* Xcode 9.0+
+* Xcode 10+
 
 |            | OS                         | Swift         |
 |------------|------------------|--------------|
 | **v2.1.2** | iOS 8+ | 3.0      |
 | **v2.2.x** | iOS 8+ | 3.2      |
 | **v3.0.x** | iOS 9+ | 4.1      |
+| **v3.1.x** | iOS 9+ | 4.2      |
 
 ## Installation
 
