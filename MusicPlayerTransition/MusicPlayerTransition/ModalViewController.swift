@@ -19,7 +19,7 @@ final class ModalViewController: UIViewController {
         let blurView = UIVisualEffectView(effect: effect)
         blurView.frame = self.view.bounds
         self.view.addSubview(blurView)
-        self.view.sendSubview(toBack: blurView)
+        self.view.sendSubviewToBack(blurView)
     }
     
     @IBAction func tapCloseButton() {

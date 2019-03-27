@@ -1,5 +1,5 @@
 PODS:
-  - ARNTransitionAnimator (3.1.0)
+  - ARNTransitionAnimator (3.2.0)
 
 DEPENDENCIES:
   - ARNTransitionAnimator
@@ -9,8 +9,8 @@ SPEC REPOS:
     - ARNTransitionAnimator
 
 SPEC CHECKSUMS:
-  ARNTransitionAnimator: 2b9bb180e4250dd847af59bda677fcbae4d2da99
+  ARNTransitionAnimator: 6fea1fe318b251abfd3cbd06d91215deb374ae40
 
-PODFILE CHECKSUM: 497ff09ad40fcb34bf17160038b66de37abbe748
+PODFILE CHECKSUM: 857bed9952badcbc9d22156dd5aa68afb79d81e9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
